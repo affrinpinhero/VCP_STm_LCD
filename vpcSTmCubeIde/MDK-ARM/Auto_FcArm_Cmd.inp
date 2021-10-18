@@ -1,0 +1,4 @@
+..\Src\fonts.c,
+..\Src\ili9341.c,
+..\Src\ili9341_touch.c 
+TO vpcSTmCubeIde RTE NOPRINT

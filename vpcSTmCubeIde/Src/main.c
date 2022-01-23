@@ -176,7 +176,7 @@ int main(void)
 	
 	
   ILI9341_WriteString(10, 100, " Current Temp ", Font_16x26, ILI9341_BLUE, ILI9341_WHITE);
-  ILI9341_WriteString(180, 150, "C" , Font_16x26, ILI9341_GREEN, ILI9341_WHITE);
+  ILI9341_WriteString(140, 150, "C" , Font_16x26, ILI9341_GREEN, ILI9341_WHITE);
 	
   /* USER CODE END 2 */
  
@@ -192,12 +192,12 @@ int main(void)
 		HAL_ADC_Start (&hadc1);
 	  HAL_ADC_PollForConversion (&hadc1, 1000);
 	  tempRawVal =  HAL_ADC_GetValue(&hadc1);
-	  voltage = (double)tempRawVal/4095*3.3;
-	  temp = ((voltage-0.76)/0.0025+25) - 32;
+	  voltage = (float)tempRawVal * (3.3/4096);
+		
+	  temp = ((voltage-0.76)/2.5)+25;
 	  HAL_ADC_Stop(&hadc1);
-		ftoa(temp,printData,4);
-	  //sprintf(printData,"%f C",temp);
-      //sprintf(printData,"%d C",testVAl);
+		
+		ftoa(temp,printData,2);
 	  ILI9341_WriteString(40, 150, printData , Font_16x26, ILI9341_RED, ILI9341_WHITE);
 
 
@@ -270,7 +270,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 	if(GPIO_Pin == setTimeBtn_Pin)
 	{
 		intFlag.btnSts = true;
-		ILI9341_WriteString(70, 220,(char*) "BTN Pressed" , Font_16x26, ILI9341_RED, ILI9341_WHITE);
+		//ILI9341_WriteString(70, 220,(char*) "BTN Pressed" , Font_16x26, ILI9341_RED, ILI9341_WHITE);
 	}
 	else
 	{

@@ -903,18 +903,18 @@ ARM Macro Assembler    Page 14
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
 interwork --depend=vpcstmcubeide\startup_stm32f429xx.d -ovpcstmcubeide\startup_
-stm32f429xx.o -I.\RTE\_vpcSTmCubeIde -IC:\Users\Myown\AppData\Local\Arm\Packs\A
-RM\CMSIS\5.6.0\CMSIS\Core\Include -IC:\Users\Myown\AppData\Local\Arm\Packs\Keil
-\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__
+stm32f429xx.o -I.\RTE\_vpcSTmCubeIde -IC:\Users\affri\AppData\Local\Arm\Packs\A
+RM\CMSIS\5.8.0\CMSIS\Core\Include -IC:\Users\affri\AppData\Local\Arm\Packs\Keil
+\STM32F4xx_DFP\2.15.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --predefine="__
 EVAL SETA 1" --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SET
-A 529" --predefine="_RTE_ SETA 1" --predefine="STM32F429xx SETA 1" --list=start
+A 536" --predefine="_RTE_ SETA 1" --predefine="STM32F429xx SETA 1" --predefine=
 
 
 
 ARM Macro Assembler    Page 15 
 
 
-up_stm32f429xx.lst startup_stm32f429xx.s
+"_RTE_ SETA 1" --list=startup_stm32f429xx.lst startup_stm32f429xx.s
 
 
 

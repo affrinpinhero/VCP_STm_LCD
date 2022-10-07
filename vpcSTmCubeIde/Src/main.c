@@ -54,8 +54,9 @@
 
 /* USER CODE BEGIN PV */
 uint32_t tempRawVal;
-float voltage, temp;
+volatile float voltage, temp;
 char printData[20];
+char printData1[20];
 typedef struct
 {
 	bool btnSts;
@@ -190,7 +191,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 		HAL_ADC_Start (&hadc1);
-	  HAL_ADC_PollForConversion (&hadc1, 1000);
+	  HAL_ADC_PollForConversion (&hadc1, 10);
 	  tempRawVal =  HAL_ADC_GetValue(&hadc1);
 	  voltage = (float)tempRawVal * (3.3/4096);
 		
@@ -199,7 +200,8 @@ int main(void)
 		
 		ftoa(temp,printData,2);
 	  ILI9341_WriteString(40, 150, printData , Font_16x26, ILI9341_RED, ILI9341_WHITE);
-
+		
+  
 
 	  cnt = cnt + 1;
 	  sprintf(myBuff,"Data = %d\n\r", cnt);
